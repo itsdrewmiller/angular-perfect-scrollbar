@@ -4,15 +4,10 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', function($
 		transclude: true,
 		template:  '<div><div ng-transclude></div></div>',
 		replace: true,
-		scope: { 
-		 	wheelSpeed: '&',
-		 	wheelPropagation: '&'
-		},
 		link: function($scope, $elem, $attr) {
-
-			$elem.perfectScrollbar({
-				wheelSpeed: $scope.wheelSpeed() || 50,
-				wheelPropagation: $scope.wheelPropagation() || false
+		    $elem.perfectScrollbar({
+				wheelSpeed: $parse($attr.wheelSpeed)() || 50,
+				wheelPropagation: $parse($attr.wheelPropagation)() || false
 			});
 		}
 	}
