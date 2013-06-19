@@ -17,42 +17,43 @@
         	}
         </style>
     </head>
-    <body ng-app="myApp">
-        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eleifend lectus et nunc congue gravida. Phasellus et iaculis risus, ut scelerisque dolor. Sed diam diam, tempor et feugiat a, pharetra sed nulla. Duis non lacinia odio, vitae ultricies dui. Ut sit amet dui quis lectus cursus laoreet et in magna. Nulla rutrum nisi urna, sit amet faucibus felis placerat ac. Cras commodo aliquam purus, eget gravida magna lacinia non. Sed facilisis, eros iaculis rhoncus adipiscing, dolor augue fermentum risus, vel vulputate massa metus ac erat.
+    <body ng-app="myApp" ng-controller="ScrollCtrl">
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray">
+            <button ng-click="addItem()">Add</button>
+            <button ng-click="removeItem()">Remove</button>
+            <div ng-repeat="times in someArray">
+                {{times}}.
 
-            Pellentesque libero justo, pellentesque non neque a, ultricies eleifend lectus. Aenean a nisl mauris. Aliquam erat volutpat. Nulla et viverra nisi, sit amet venenatis leo. Quisque aliquam sed leo eu pretium. Maecenas a lobortis lacus. Aenean lacinia scelerisque aliquam. Vestibulum pretium consequat enim at lacinia. Suspendisse pretium nulla quis lacus accumsan consectetur. In hac habitasse platea dictumst.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eleifend lectus et nunc congue gravida. Phasellus et iaculis risus, ut scelerisque dolor. Sed diam diam, tempor et feugiat a, pharetra sed nulla. Duis non lacinia odio, vitae ultricies dui. Ut sit amet dui quis lectus cursus laoreet et in magna. Nulla rutrum nisi urna, sit amet faucibus felis placerat ac. Cras commodo aliquam purus, eget gravida magna lacinia non. Sed facilisis, eros iaculis rhoncus adipiscing, dolor augue fermentum risus, vel vulputate massa metus ac erat.
 
-            In risus ipsum, facilisis sit amet scelerisque imperdiet, vulputate ac erat. Quisque sed ipsum ornare, euismod quam vel, eleifend metus. Praesent ut fermentum augue. Sed sodales mollis arcu. Etiam quis erat dignissim, posuere tortor at, ullamcorper orci. Integer sodales, lectus a venenatis scelerisque, ipsum augue tempus augue, non vulputate nibh nunc ac est. Vestibulum accumsan arcu ut semper dapibus. Fusce mattis turpis et ante adipiscing, a mattis ipsum vestibulum. Aliquam non eros lobortis augue dapibus consectetur. Praesent sit amet nulla eu ligula elementum dapibus.
+                Pellentesque libero justo, pellentesque non neque a, ultricies eleifend lectus. Aenean a nisl mauris. Aliquam erat volutpat. Nulla et viverra nisi, sit amet venenatis leo. Quisque aliquam sed leo eu pretium. Maecenas a lobortis lacus. Aenean lacinia scelerisque aliquam. Vestibulum pretium consequat enim at lacinia. Suspendisse pretium nulla quis lacus accumsan consectetur. In hac habitasse platea dictumst.
 
-            Quisque id sapien vel neque malesuada cursus non dictum enim. Nam tincidunt eu ante ut imperdiet. Sed odio erat, mattis non leo eget, varius ultricies ipsum. Nulla porta est eu eros interdum dapibus. Sed a odio nisi. Sed eu vestibulum neque. Ut luctus risus nulla. Aenean dignissim porta sem, vitae dictum turpis iaculis a. Integer purus purus, dictum vitae consectetur sed, sollicitudin at enim.
+                In risus ipsum, facilisis sit amet scelerisque imperdiet, vulputate ac erat. Quisque sed ipsum ornare, euismod quam vel, eleifend metus. Praesent ut fermentum augue. Sed sodales mollis arcu. Etiam quis erat dignissim, posuere tortor at, ullamcorper orci. Integer sodales, lectus a venenatis scelerisque, ipsum augue tempus augue, non vulputate nibh nunc ac est. Vestibulum accumsan arcu ut semper dapibus. Fusce mattis turpis et ante adipiscing, a mattis ipsum vestibulum. Aliquam non eros lobortis augue dapibus consectetur. Praesent sit amet nulla eu ligula elementum dapibus.
 
-            Cras sed nunc eget eros dapibus placerat. Fusce suscipit, nulla id elementum euismod, velit elit tincidunt leo, non bibendum magna nisl a diam. Donec lorem enim, tristique sed mi et, mollis luctus risus. In rutrum a magna non cursus. Duis malesuada varius elit eu hendrerit. Vivamus sed consequat augue. Proin ligula lectus, lacinia eu elementum sed, lacinia a nisi.
+                Quisque id sapien vel neque malesuada cursus non dictum enim. Nam tincidunt eu ante ut imperdiet. Sed odio erat, mattis non leo eget, varius ultricies ipsum. Nulla porta est eu eros interdum dapibus. Sed a odio nisi. Sed eu vestibulum neque. Ut luctus risus nulla. Aenean dignissim porta sem, vitae dictum turpis iaculis a. Integer purus purus, dictum vitae consectetur sed, sollicitudin at enim.
 
-            Vestibulum porttitor gravida lectus vitae cursus. Sed mauris orci, aliquam in sodales vel, consectetur vitae dui. Phasellus auctor sollicitudin massa sed imperdiet. Nulla venenatis nisl molestie, consectetur metus eget, luctus lorem. Nullam blandit ut felis id consequat. Aliquam semper accumsan condimentum. Donec eu sodales mauris. Phasellus sagittis tellus sit amet purus venenatis, pellentesque convallis tellus porttitor. Etiam dictum dui nec adipiscing tincidunt. Curabitur viverra pretium est. Maecenas ligula purus, faucibus vitae mauris et, suscipit imperdiet tellus. Ut id feugiat lacus. Vivamus sed orci posuere, convallis nunc at, volutpat felis. Sed gravida libero nibh, nec mattis tortor tempus vel.
+                Cras sed nunc eget eros dapibus placerat. Fusce suscipit, nulla id elementum euismod, velit elit tincidunt leo, non bibendum magna nisl a diam. Donec lorem enim, tristique sed mi et, mollis luctus risus. In rutrum a magna non cursus. Duis malesuada varius elit eu hendrerit. Vivamus sed consequat augue. Proin ligula lectus, lacinia eu elementum sed, lacinia a nisi.
 
-            Quisque nec lacus sed enim rhoncus gravida vitae et leo. Ut ante elit, adipiscing vitae risus ac, rhoncus imperdiet eros. Maecenas ornare iaculis neque, fermentum iaculis sem volutpat nec. Ut nec varius nulla, et ullamcorper nunc. Aliquam malesuada erat a ligula aliquet posuere. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras pellentesque a metus et cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula eleifend convallis. Pellentesque cursus lobortis elit. Aenean in tincidunt libero. Fusce ullamcorper velit lacus, eget rutrum neque iaculis sit amet. Phasellus in libero diam. Etiam in nulla eget felis pellentesque rhoncus. Proin nibh urna, eleifend at nunc in, aliquam tincidunt mi.
-
-            Ut tellus libero, tincidunt rhoncus erat a, consequat consequat urna. In luctus imperdiet dolor, vel feugiat orci dapibus eget. Phasellus erat tortor, faucibus id urna in, iaculis malesuada purus. Curabitur viverra ipsum magna. Curabitur non eleifend justo, a congue dui. Cras placerat vulputate porttitor. In eu est in justo auctor dignissim sit amet ac nunc. Aliquam vestibulum erat dictum, scelerisque justo sit amet, mollis lectus.
-
-            Praesent varius neque rhoncus tellus lobortis, aliquam facilisis nisl placerat. Cras diam enim, consequat et dolor vel, placerat rhoncus tortor. Nam molestie nisl quis enim fermentum lobortis. Sed vitae purus auctor, scelerisque felis sed, congue arcu. Etiam viverra nisl sapien, ornare semper lorem dictum eu. Pellentesque luctus volutpat vehicula. Morbi tristique odio sed est mattis, tincidunt ornare nisl pellentesque. Proin non odio imperdiet, pharetra mauris et, adipiscing augue. Cras vehicula enim sodales libero egestas congue.
-
-            Integer consequat magna justo, ut rutrum sapien sodales at. Sed eget arcu metus. Phasellus aliquam, diam lobortis viverra vehicula, neque urna volutpat nisl, eget fringilla enim libero at velit. Duis non augue quis massa porta faucibus. Nulla et lacus erat. Duis id ante at nulla dapibus dictum pharetra vulputate lectus. Nullam orci nisi, mattis nec arcu non, aliquam aliquam arcu. Morbi pharetra arcu eleifend ligula blandit, et adipiscing lorem tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-            Morbi malesuada semper porta. Sed vel neque eros. Vivamus ac imperdiet turpis. Quisque porttitor et orci eu blandit. Aliquam sed libero nec eros elementum commodo eget non ligula. Donec sagittis hendrerit augue, vitae mattis enim. Vivamus ultrices arcu ut dignissim sodales. Phasellus eu ligula posuere nunc tincidunt cursus ac nec sapien. Donec nunc velit, consequat sed nunc quis, semper lobortis mi. Cras rhoncus scelerisque posuere. Cras varius, metus vitae laoreet consectetur, erat dolor vehicula libero, elementum malesuada ipsum urna nec metus.
-
-            Mauris dolor neque, rhoncus id sapien ac, ultrices scelerisque arcu. Etiam ante nisi, imperdiet ut risus ut, aliquet condimentum mi. Aliquam interdum et dui nec dapibus. Morbi dictum suscipit erat. Duis adipiscing porta leo in posuere. Vestibulum elementum eu eros at ultrices. Nulla feugiat lectus quis arcu tempus tincidunt. Donec vitae nulla tristique, pretium erat sit amet, euismod sapien. Sed blandit risus ante, quis tincidunt diam pulvinar sit amet. Nullam laoreet ultrices ligula eu pharetra. Nulla id lorem vestibulum, mattis mi in, rutrum quam. Vestibulum id arcu tincidunt, consectetur massa et, rhoncus lorem.
-
-            Duis sed rhoncus dolor, a pulvinar ante. Donec laoreet, arcu vitae venenatis convallis, leo magna egestas dui, vel facilisis eros tortor sed ipsum. Praesent gravida orci id erat posuere vehicula. Morbi ac neque posuere augue consequat rhoncus imperdiet vel velit. Phasellus non consectetur nisl. Proin in placerat dolor, eget aliquet eros. Vestibulum mi dolor, convallis non ligula nec, feugiat molestie arcu. Mauris auctor, augue at fringilla cursus, urna massa auctor mi, porta facilisis tellus lorem et nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet scelerisque lectus, et feugiat eros volutpat quis. Pellentesque commodo risus eu auctor semper. Morbi congue velit ac est placerat euismod. Sed viverra lorem id nunc eleifend pellentesque. Suspendisse tincidunt nibh vel odio lobortis commodo.
-
-            Mauris commodo massa sed adipiscing tristique. Praesent tincidunt sit amet eros et fermentum. Donec quis ante lorem. Nulla congue enim et viverra convallis. Donec varius orci ut mi vestibulum consectetur. Praesent posuere libero tellus, non ultricies felis rutrum ac. Nullam sed urna blandit, suscipit enim vel, condimentum orci. Ut tincidunt eleifend luctus. Cras bibendum euismod ligula id fermentum.
-
-            Etiam urna velit, posuere ac dui eu, malesuada varius tellus. Pellentesque luctus neque magna, a luctus purus porttitor id. Etiam sit amet elit sed felis lacinia malesuada. Etiam quis diam nec ligula adipiscing sagittis. Ut non ligula mauris. Duis rhoncus condimentum erat, eu interdum libero suscipit at. Donec a orci a tellus dapibus euismod. Fusce ac risus sit amet dolor ornare faucibus ornare et metus. Praesent at enim mi. Vivamus iaculis elementum mi, id hendrerit metus rhoncus ut. Praesent sagittis tempus ipsum non commodo.
-
-            Aenean venenatis luctus ultrices. Donec eu orci nisi. Aenean eu venenatis eros. In accumsan arcu mauris, et vulputate nunc ornare vitae. Integer ut enim non quam dapibus gravida. Quisque fringilla eros sit amet bibendum tempus. Integer tristique gravida sem, sed ullamcorper tortor auctor eu. Praesent egestas aliquet odio eget fermentum. Sed feugiat lobortis arcu quis eleifend. Nunc vel bibendum nulla. Fusce nec massa magna. Maecenas id sapien aliquet, dapibus justo eget, interdum ligula. Nam pharetra sem a leo congue, id rhoncus tellus elementum. Sed nisl arcu, fringilla et luctus non, rutrum eget nisl. Vestibulum suscipit turpis metus, vitae elementum mauris pharetra et. Pellentesque mi neque, dignissim quis rhoncus non, varius quis eros.
+                Vestibulum porttitor gravida lectus vitae cursus. Sed mauris orci, aliquam in sodales vel, consectetur vitae dui. Phasellus auctor sollicitudin massa sed imperdiet. Nulla venenatis nisl molestie, consectetur metus eget, luctus lorem. Nullam blandit ut felis id consequat. Aliquam semper accumsan condimentum. Donec eu sodales mauris. Phasellus sagittis tellus sit amet purus venenatis, pellentesque convallis tellus porttitor. Etiam dictum dui nec adipiscing tincidunt. Curabitur viverra pretium est. Maecenas ligula purus, faucibus vitae mauris et, suscipit imperdiet tellus. Ut id feugiat lacus. Vivamus sed orci posuere, convallis nunc at, volutpat felis. Sed gravida libero nibh, nec mattis tortor tempus vel.
+            </div>
         </perfect-scrollbar>
     <script>
     	    	var app = angular.module('myApp', ['perfect_scrollbar']);
+
+                var ScrollCtrl = function($scope) {
+                    $scope.someArray = [1, 2, 3];
+
+                    $scope.addItem = function() {
+                        var arrayLength = $scope.someArray.length;
+                        var nextValue = arrayLength > 0 ? $scope.someArray[arrayLength - 1] + 1 : 1;
+                        $scope.someArray.push(nextValue);
+                    };
+
+                    $scope.removeItem = function() {
+                        if ($scope.someArray.length) { $scope.someArray.pop(); }
+                    }
+                };
+
         </script>
     </body>
 </html>
