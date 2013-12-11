@@ -3,5 +3,5 @@
         "version": "0.1.0",
         "main": "src/angular-perfect-scrollbar.js",
         "ignore": ["**/*.md", "**/*.png", "**/*.jpg", "**/*.gif", "releases/*", "README", "**/*.html", "**/*.ico", "**/*.txt", "**/*.handlebars"],
-        "dependencies": {"jquery": ">1.10", "perfect-scrollbar": ">0.4.6"}
+        "dependencies": {"jquery": ">1.10", "perfect-scrollbar": ">0.4"}
 }
