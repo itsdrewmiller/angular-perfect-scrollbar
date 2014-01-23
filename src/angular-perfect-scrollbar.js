@@ -10,6 +10,8 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', function($
 				wheelPropagation: $parse($attr.wheelPropagation)() || false,
 				minScrollbarLength: $parse($attr.minScrollbarLength)() || false,
 				useBothWheelAxes: $parse($attr.useBothWheelAxes)() || false,
+				suppressScrollX: $parse($attr.suppressScrollX)() || false,
+				suppressScrollY: $parse($attr.suppressScrollY)() || false,
 			});
 
 			if ($attr.refreshOnChange) {
