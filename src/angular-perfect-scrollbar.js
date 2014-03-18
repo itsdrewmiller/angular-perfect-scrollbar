@@ -1,4 +1,4 @@
-angular.module('perfect_scrollbar', []).directive('perfectScrollbar', function($parse) {
+angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse', function($parse) {
 	return {
 		restrict: 'E',
 		transclude: true,
@@ -23,4 +23,4 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', function($
 			}
 		}
 	}
-});
+}]);
