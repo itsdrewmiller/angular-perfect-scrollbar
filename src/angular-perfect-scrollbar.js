@@ -21,6 +21,10 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse',
           setTimeout(function() { $elem.perfectScrollbar('update'); }, 10);
         });
       }
+	  
+		$elem.bind('$destroy', function() {
+			$elem.perfectScrollbar('destroy');
+		});
     }
   };
 }]);
