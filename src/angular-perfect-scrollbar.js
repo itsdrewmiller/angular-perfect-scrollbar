@@ -1,4 +1,4 @@
-angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse', '$timeout', function($parse) {
+angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse', '$timeout', function($parse, $timeout) {
   return {
     restrict: 'E',
     transclude: true,
