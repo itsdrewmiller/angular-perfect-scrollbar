@@ -1,26 +1,38 @@
 angular.module('perfect_scrollbar', []).directive('perfectScrollbar', ['$parse', function($parse) {
+  var psOptions = [
+    'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'useBothWheelAxes',
+    'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
+    'scrollYMarginOffset', 'includePadding'
+  ];
+  
   return {
     restrict: 'E',
     transclude: true,
-    template:  '<div><div ng-transclude></div></div>',
+    template: '<div><div ng-transclude></div></div>',
     replace: true,
     link: function($scope, $elem, $attr) {
-      $elem.perfectScrollbar({
-        wheelSpeed: $parse($attr.wheelSpeed)() || 50,
-        wheelPropagation: $parse($attr.wheelPropagation)() || false,
-        minScrollbarLength: $parse($attr.minScrollbarLength)() || false,
-        useBothWheelAxes: $parse($attr.useBothWheelAxes)() || false,
-        suppressScrollX: $parse($attr.suppressScrollX)() || false,
-        suppressScrollY: $parse($attr.suppressScrollY)() || false
-      });
+      var options = {};
+      
+      for (var i=0, l=psOptions.length; i<l; i++) {
+        var opt = psOptions[i];
+        if ($attr[opt] != undefined) {
+          options[opt] = $parse($attr[opt])();
+        }
+      }
+      
+      $elem.perfectScrollbar(options);
 
       if ($attr.refreshOnChange) {
-        $scope.$watchCollection($attr.refreshOnChange, function(newNames, oldNames) {
-          // I'm not crazy about setting timeouts but it sounds like thie is unavoidable per
-          // http://stackoverflow.com/questions/11125078/is-there-a-post-render-callback-for-angular-js-directive
-          setTimeout(function() { $elem.perfectScrollbar('update'); }, 10);
+        $scope.$watchCollection($attr.refreshOnChange, function() {
+          $scope.$evalAsync(function() {
+            $elem.perfectScrollbar('update');
+          });
         });
       }
+      
+      $elem.bind('$destroy', function() {
+        $elem.perfectScrollbar('destroy');
+      });
     }
   };
 }]);
