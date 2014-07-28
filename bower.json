@@ -1,6 +1,6 @@
 {
   "name": "angular-perfect-scrollbar",
-  "version": "0.0.1",
+  "version": "0.1.4",
   "description": "A directive to allow the use of perfect scrollbar in angular",
   "main": "src/angular-perfect-scrollbar.js",
   "dependencies": {"jquery": ">=1.10.0", "perfect-scrollbar": ">=0.4.0"},
