@@ -8,6 +8,9 @@
     "perfect",
     "scrollbar"
   ],
+  "dependencies": {
+    "perfect-scrollbar": "~0.4.11"
+  },
   "authors": [
     "Drew Miller"
   ],
