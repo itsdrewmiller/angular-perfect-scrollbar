@@ -22,7 +22,9 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         }
       }
 
-      $elem.perfectScrollbar(options);
+      $scope.$evalAsync(function() {
+        $elem.perfectScrollbar(options);
+      });
 
       function update() {
         $scope.$evalAsync(function() {
