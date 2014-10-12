@@ -3,7 +3,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
   var psOptions = [
     'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'useBothWheelAxes',
     'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
-    'scrollYMarginOffset', 'includePadding'//, 'onScroll'
+    'scrollYMarginOffset', 'includePadding'//, 'onScroll', 'scrollDown'
   ];
 
   return {
@@ -39,6 +39,11 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
 
       function update() {
         $scope.$evalAsync(function() {
+          if ($attr.scrollDown == 'true') {
+            setTimeout(function () {
+              $($elem).scrollTop($($elem).prop("scrollHeight"));
+            }, 100);
+          }
           $elem.perfectScrollbar('update');
         });
 
@@ -46,6 +51,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         if(!$scope.$$phase) {
           $scope.$apply();
         }
+        
       }
 
       // This is necessary when you don't watch anything with the scrollbar
