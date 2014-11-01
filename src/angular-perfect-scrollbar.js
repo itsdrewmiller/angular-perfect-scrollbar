@@ -3,7 +3,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
   var psOptions = [
     'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'useBothWheelAxes',
     'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
-    'scrollYMarginOffset', 'includePadding'
+    'scrollYMarginOffset', 'includePadding'//, 'onScroll'
   ];
 
   return {
@@ -24,6 +24,17 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
 
       $scope.$evalAsync(function() {
         $elem.perfectScrollbar(options);
+        var onScrollHandler = $parse($attr.onScroll)
+        $elem.scroll(function(){
+          var scrollTop = $elem.scrollTop()
+          var scrollHeight = $elem.prop('scrollHeight') - $elem.height()
+          $scope.$apply(function() {
+            onScrollHandler($scope, {
+              scrollTop: scrollTop,
+              scrollHeight: scrollHeight
+            })
+          })
+        });
       });
 
       function update() {
