@@ -3,7 +3,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
   var psOptions = [
     'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'useBothWheelAxes',
     'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
-    'scrollYMarginOffset', 'includePadding'//, 'onScroll'
+    'scrollYMarginOffset', 'includePadding'//, 'onScroll', 'scrollDown'
   ];
 
   return {
@@ -37,8 +37,13 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         });
       });
 
-      function update() {
+      function update(event) {
         $scope.$evalAsync(function() {
+          if ($attr.scrollDown == 'true' && event != 'mouseenter') {
+            setTimeout(function () {
+              $($elem).scrollTop($($elem).prop("scrollHeight"));
+            }, 100);
+          }
           $elem.perfectScrollbar('update');
         });
 
@@ -46,10 +51,11 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         if(!$scope.$$phase) {
           $scope.$apply();
         }
+
       }
 
       // This is necessary when you don't watch anything with the scrollbar
-      $elem.bind('mouseenter', update);
+      $elem.bind('mouseenter', update('mouseenter'));
 
       // Possible future improvement - check the type here and use the appropriate watch for non-arrays
       if ($attr.refreshOnChange) {
