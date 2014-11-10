@@ -49,10 +49,21 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
 
         // This is necessary if you aren't watching anything for refreshes
         if(!$scope.$$phase) {
-          $scope.$apply();
+          $scope.safeApply();
         }
 
       }
+
+      $scope.safeApply = function(fn) {
+        var phase = this.$root.$$phase;
+        if(phase == '$apply' || phase == '$digest') {
+          if(fn && (typeof(fn) === 'function')) {
+            fn();
+          }
+        } else {
+          this.$apply(fn);
+        }
+      };
 
       // This is necessary when you don't watch anything with the scrollbar
       $elem.bind('mouseenter', update('mouseenter'));
