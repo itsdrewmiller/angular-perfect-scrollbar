@@ -1,5 +1,5 @@
 angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
-  ['$parse', '$window', function($parse, $window) {
+  ['$parse', '$window', '$timeout' function($parse, $window, $timeout) {
   var psOptions = [
     'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'useBothWheelAxes',
     'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
@@ -28,30 +28,26 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         $elem.scroll(function(){
           var scrollTop = $elem.scrollTop()
           var scrollHeight = $elem.prop('scrollHeight') - $elem.height()
-          $scope.$apply(function() {
+          $timeout(function() {
             onScrollHandler($scope, {
               scrollTop: scrollTop,
               scrollHeight: scrollHeight
-            })
-          })
+            });
+          });
         });
       });
 
       function update(event) {
-        $scope.$evalAsync(function() {
-          if ($attr.scrollDown == 'true' && event != 'mouseenter') {
-            setTimeout(function () {
-              $($elem).scrollTop($($elem).prop("scrollHeight"));
-            }, 100);
-          }
-          $elem.perfectScrollbar('update');
+        $timeout(function(){
+          $scope.$evalAsync(function() {
+            if ($attr.scrollDown == 'true' && event != 'mouseenter') {
+              setTimeout(function () {
+                $($elem).scrollTop($($elem).prop("scrollHeight"));
+              }, 100);
+            }
+            $elem.perfectScrollbar('update');
+          });          
         });
-
-        // This is necessary if you aren't watching anything for refreshes
-        if(!$scope.$$phase) {
-          $scope.$apply();
-        }
-
       }
 
       // This is necessary when you don't watch anything with the scrollbar
