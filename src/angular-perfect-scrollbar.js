@@ -46,12 +46,6 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
           }
           $elem.perfectScrollbar('update');
         });
-
-        // This is necessary if you aren't watching anything for refreshes
-        if(!$scope.$$phase) {
-          $scope.$apply();
-        }
-
       }
 
       // This is necessary when you don't watch anything with the scrollbar
