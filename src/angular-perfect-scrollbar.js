@@ -36,7 +36,17 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
           })
         });
       });
-
+      //watch for content size dynamically changes
+      $scope.$watch(
+        function() {
+          return $elem.prop("scrollHeight");
+        },
+        function(newValue, oldValue) {
+            if (newValue) {
+               update('contentSizeChange');
+            }
+        }
+      );
       function update(event) {
         $scope.$evalAsync(function() {
           if ($attr.scrollDown == 'true' && event != 'mouseenter') {
