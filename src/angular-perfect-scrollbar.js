@@ -49,7 +49,9 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
       }
 
       // This is necessary when you don't watch anything with the scrollbar
-      $elem.bind('mouseenter', update('mouseenter'));
+      $elem.on('mouseenter', function(){
+          update('mouseenter');
+      });
 
       // Possible future improvement - check the type here and use the appropriate watch for non-arrays
       if ($attr.refreshOnChange) {
@@ -60,11 +62,15 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
 
       // this is from a pull request - I am not totally sure what the original issue is but seems harmless
       if ($attr.refreshOnResize) {
-        jqWindow.on('resize', update);
+        jqWindow.on('resize',  function(){
+            update();
+        });
       }
 
-      $elem.bind('$destroy', function() {
-        jqWindow.off('resize', update);
+      $elem.on('$destroy', function() {
+        jqWindow.off('resize', function(){
+            update();
+        });
         $elem.perfectScrollbar('destroy');
       });
 
