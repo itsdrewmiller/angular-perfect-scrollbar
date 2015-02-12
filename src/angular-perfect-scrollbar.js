@@ -49,7 +49,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
       }
 
       // This is necessary when you don't watch anything with the scrollbar
-      $elem.bind('mouseenter', update('mouseenter'));
+      $elem.bind('mouseenter', update.bind(null, 'mouseenter'));
 
       // Possible future improvement - check the type here and use the appropriate watch for non-arrays
       if ($attr.refreshOnChange) {
