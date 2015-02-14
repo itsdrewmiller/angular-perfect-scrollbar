@@ -27,6 +27,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         var onScrollHandler = $parse($attr.onScroll);
         $elem.scroll(function(){
           var scrollTop = $elem.scrollTop();
+          var scrollHeight = $elem.prop('scrollHeight') - $elem.height();
           $timeout(function() {
             onScrollHandler($scope, {
               scrollTop: scrollTop,
