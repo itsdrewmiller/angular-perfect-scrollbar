@@ -9,7 +9,7 @@
     "scrollbar"
   ],
   "dependencies": {
-    "perfect-scrollbar": "~0.4.11",
+    "perfect-scrollbar": "~0.5.9",
     "angular": "*"
   },
   "authors": [
