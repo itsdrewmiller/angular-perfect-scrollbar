@@ -58,6 +58,25 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         });
       }
 
+      if($attr.alwaysVisible == 'true'){
+        $scope.$evalAsync(function() {
+          setTimeout(function () {
+            $elem.perfectScrollbar('update');
+            $elem.find('.ps-scrollbar-x-rail').first().css('opacity', 0.6);
+            $elem.find('.ps-scrollbar-y-rail').first().css('opacity', 0.6);
+          }, 100);
+        });
+      }
+
+      if($attr.unbindWheel == 'true'){
+        $scope.$evalAsync(function() {
+          setTimeout(function () {
+            $elem.unbind('mousewheel');
+            $elem.unbind('wheel');
+          }, 100);
+        });
+      }
+
       // this is from a pull request - I am not totally sure what the original issue is but seems harmless
       if ($attr.refreshOnResize) {
         jqWindow.on('resize', update);
