@@ -68,6 +68,12 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         $elem.perfectScrollbar('destroy');
       });
 
+	  if($attr.updateOn) {
+	    $attr.updateOn.split(' ').forEach(function (eventName) {
+		  $scope.$on(eventName, update);
+		});
+	  }
+		
     }
   };
 }]);
