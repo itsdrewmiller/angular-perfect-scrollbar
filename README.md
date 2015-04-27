@@ -15,9 +15,9 @@ Include the angular-perfect-scrollbar files in your index.html:
 
 ````
 <link rel="stylesheet" href="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css" />
-<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.js"></script>
-<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.with-mousewheel.min.js"></script>
-<script src="bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
+<script src="bower_components/cc-perfect-scrollbar/min/perfect-scrollbar.min.js"></script>
+<script src="bower_components/cc-perfect-scrollbar/min/perfect-scrollbar.with-mousewheel.min.js"></script>
+<script src="bower_components/cc-angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
 ```
 
 Include some css for your scrollable content:
