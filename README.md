@@ -2,20 +2,13 @@
 > This fork will fix the broken dependency on [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) and is
 compatible with [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) v-6.0.0 and up
 
-angular-perfect-scrollbar
-=========================
-
-This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in angular.
-
-You can just use the file (in the *src* directory) as is - you only need to pay attention to the other stuff for further development.  It is also available on [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
-
 Installation
 =========================
 
 Install via Bower:
 
 ````
-$ bower install angular-perfect-scrollbar --save
+$ bower install cc-angular-perfect-scrollbar --save
 ```
 
 Include the angular-perfect-scrollbar files in your index.html:
