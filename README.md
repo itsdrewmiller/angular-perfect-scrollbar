@@ -1,5 +1,6 @@
 #cc-angular-perfect-scrollbar
-> This is a simple fork that will fix the broken dependency on [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) 
+> This fork will fix the broken dependency on [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) and is
+compatible with [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) v-6.0.0 and up
 
 angular-perfect-scrollbar
 =========================
