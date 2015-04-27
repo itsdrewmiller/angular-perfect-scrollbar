@@ -40,7 +40,7 @@ Add it as module to your app.js:
 Use it wherever you want:
 
 ````
-<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
+<perfect-scrollbar class="scroller">
   // your content
 </perfect-scrollbar>
 ````
