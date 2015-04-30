@@ -1,5 +1,13 @@
 angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
   ['$parse', '$window', function($parse, $window) {
+
+    //Ps options to test against when creating options{}
+    var psOptions = [
+      'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'useBothWheelAxes',
+      'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
+      'scrollYMarginOffset', 'includePadding'//, 'onScroll', 'scrollDown'
+    ];
+
     return {
       restrict: 'EA',
       transclude: true,
@@ -8,11 +16,15 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
       link: function($scope, $elem, $attr) {
         var el = $elem[0];
         var jqWindow = angular.element($window);
-        var options = {
-          wheelSpeed: 1,
-          wheelPropagation: true,
-          minScrollbarLength: 20
-        };
+        var options = {};
+
+        //search Ps lib options passed as attrs to wrapper
+        for (var i=0, l=psOptions.length; i<l; i++) {
+          var opt = psOptions[i];
+          if (typeof $attr[opt] !== 'undefined') {
+            options[opt] = $parse($attr[opt])();
+          }
+        }
 
         $scope.$evalAsync(function() {
           Ps.initialize(el, options);
@@ -50,7 +62,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
           });
         }
 
-        // this is from a pull request - I am not totally sure what the original issue is but seems harmless
+        // update scrollbar once window is resized
         if ($attr.refreshOnResize) {
           jqWindow.on('resize', update);
         }
