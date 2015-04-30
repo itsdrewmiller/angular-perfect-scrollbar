@@ -40,7 +40,7 @@ Add it as module to your app.js:
 Use it wherever you want:
 
 ````
-<perfect-scrollbar class="scroller">
+<perfect-scrollbar class="scroller"  wheel-propagation="true" wheel-speed="2" min-scrollbar-length="20">
   // your content
 </perfect-scrollbar>
 ````
@@ -48,5 +48,3 @@ Use it wherever you want:
 Further installation and usage hints can be found here:
 
 https://github.com/noraesae/perfect-scrollbar
-
-You can find an example in the *examples* folder in this repository.  Much respect to [Hyunje Alex Jun](https://github.com/noraesae) for his great scrollbar library.
