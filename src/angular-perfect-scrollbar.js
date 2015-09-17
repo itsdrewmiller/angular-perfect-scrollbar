@@ -69,10 +69,12 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
       });
 
     },
-    controller: function ($scope, $element, $transclude) {
-      $transclude($scope, function (transEl) {
-        $element.append(transEl);
-      });
-    }
+    controller: ['$scope', '$element', '$transclude',
+      function ($scope, $element, $transclude) {
+        $transclude($scope, function (transEl) {
+          $element.append(transEl);
+        });
+      }
+    ]
   };
 }]);
