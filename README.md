@@ -1,4 +1,4 @@
-angular-perfect-scrollbar
+angular-perfect-scrollbar-ext
 =========================
 
 This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in angular.
@@ -11,7 +11,7 @@ Installation
 Install via Bower:
 
 ````
-$ bower install angular-perfect-scrollbar --save
+$ bower install angular-perfect-scrollbar-ext --save
 ```
 
 Include the angular-perfect-scrollbar files in your index.html:
