@@ -1,6 +1,6 @@
 {
   "name": "angular-perfect-scrollbar",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A directive to allow the use of perfect scrollbar in angular",
   "main": "src/angular-perfect-scrollbar.js",
   "keywords": [
@@ -13,10 +13,10 @@
     "angular": "*"
   },
   "authors": [
-    "Drew Miller"
+    "Ahsan Ayaz"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/itsdrewmiller/angular-perfect-scrollbar",
+  "homepage": "https://github.com/AhsanAyaz/angular-perfect-scrollbar-ext",
   "ignore": [
     "**/.*",
     "node_modules",
