@@ -1,14 +1,25 @@
 {
   "name": "angular-perfect-scrollbar",
-  "version": "1.0.2",
+  "version": "1.1.1",
   "private": false,
   "scripts": {
     "test": "grunt"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.2",
     "grunt-contrib-jshint": "^0.8.0"
-  }
+  },
+  "description": "> This fork will fix the broken dependency on [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) and is\r compatible with [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) v-6.0.0 and up",
+  "main": "src/angular-perfect-scrollbar.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CareerCruising/angular-perfect-scrollbar.git"
+  },
+  "author": "Drew Miller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CareerCruising/angular-perfect-scrollbar/issues"
+  },
+  "homepage": "https://github.com/CareerCruising/angular-perfect-scrollbar#readme"
 }
