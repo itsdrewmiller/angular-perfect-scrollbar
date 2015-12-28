@@ -5,7 +5,10 @@
   "scripts": {
     "test": "grunt"
   },
-  "dependencies": {},
+  "dependencies": {     
+    "perfect-scrollbar": "~0.6.7",
+    "angular": "*" 
+  },
   "devDependencies": {
     "grunt": "^0.4.2",
     "grunt-contrib-jshint": "^0.8.0"
