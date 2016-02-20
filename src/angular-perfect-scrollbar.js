@@ -16,6 +16,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
       template: '<div><div ng-transclude></div></div>',
       replace: true,
       link: function($scope, $elem, $attr) {
+        if ($attr.perfectScrollbar == "false" || !$attr.perfectScrollbar) return;
         var el = $elem[0];
         var jqWindow = angular.element($window);
         var options = {};
