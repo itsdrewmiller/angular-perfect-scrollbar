@@ -8,18 +8,17 @@
         <script src="../bower_components/perfect-scrollbar/min/perfect-scrollbar.with-mousewheel.min.js" ></script>
         <script src="../src/angular-perfect-scrollbar.js" ></script>
         <style>
-        	.scroller {
-        		white-space: pre-line;
-                height: 480px;
-                width: 100%;
-                overflow-x: hidden;
+            .scroller {
+                white-space: pre-line;
+                height: 720px;
+                width: 480px;
                 overflow-y: hidden;
                 position: relative;
-        	}
+            }
         </style>
     </head>
     <body ng-app="myApp" ng-controller="ScrollCtrl">
-        <perfect-scrollbar class="scroller" wheel-propagation="true" use-both-wheel-axes="true" wheel-speed="50" refresh-on-change="someArray" on-scroll="onScroll(scrollTop, scrollHeight, scrollLeft, scrollWidth)">
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray" on-scroll="onScroll(scrollTop, scrollHeight)">
             <button ng-click="addItem()">Add</button>
             <button ng-click="removeItem()">Remove</button>
             <div ng-repeat="times in someArray">
@@ -38,36 +37,26 @@
                 Vestibulum porttitor gravida lectus vitae cursus. Sed mauris orci, aliquam in sodales vel, consectetur vitae dui. Phasellus auctor sollicitudin massa sed imperdiet. Nulla venenatis nisl molestie, consectetur metus eget, luctus lorem. Nullam blandit ut felis id consequat. Aliquam semper accumsan condimentum. Donec eu sodales mauris. Phasellus sagittis tellus sit amet purus venenatis, pellentesque convallis tellus porttitor. Etiam dictum dui nec adipiscing tincidunt. Curabitur viverra pretium est. Maecenas ligula purus, faucibus vitae mauris et, suscipit imperdiet tellus. Ut id feugiat lacus. Vivamus sed orci posuere, convallis nunc at, volutpat felis. Sed gravida libero nibh, nec mattis tortor tempus vel.
             </div>
         </perfect-scrollbar>
-        <p>scrollTop:{{scrollTop}}, scrollHeight:{{scrollHeight}}, scrollLeft:{{scrollLeft}}, scrollWidth:{{scrollWidth}}</p>
+        <p>scrollTop:{{scrollTop}}, scrollHeight:{{scrollHeight}}</p>
     <script>
-    	    	var app = angular.module('myApp', ['perfect_scrollbar']);
-
+                var app = angular.module('myApp', ['perfect_scrollbar']);
                 var ScrollCtrl = function($scope) {
                     $scope.someArray = [1, 2, 3];
-
                     $scope.addItem = function() {
                         var arrayLength = $scope.someArray.length;
                         var nextValue = arrayLength > 0 ? $scope.someArray[arrayLength - 1] + 1 : 1;
                         $scope.someArray.push(nextValue);
                     };
-
                     $scope.removeItem = function() {
                         if ($scope.someArray.length) { $scope.someArray.pop(); }
                     }
-
                     $scope.scrollTop = 0
                     $scope.scrollHeight = 0
-                    $scope.scrollLeft = 0
-                    $scope.scrollWidth = 0
-                    $scope.onScroll = function (scrollTop, scrollHeight, scrollLeft, scrollWidth) {
-
+                    $scope.onScroll = function (scrollTop, scrollHeight) {
                         $scope.scrollTop = scrollTop
                         $scope.scrollHeight = scrollHeight
-                        $scope.scrollLeft = scrollLeft
-                        $scope.scrollWidth = scrollWidth
                     }
                 };
-
         </script>
     </body>
 </html>
