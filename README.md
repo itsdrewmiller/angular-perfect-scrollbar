@@ -1,3 +1,9 @@
+Would you like to be a co-maintainer?
+=====================================
+
+Please email me.  "drew" at the domain "drewmiller.net".
+
+
 angular-perfect-scrollbar
 =========================
 
