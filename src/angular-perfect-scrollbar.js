@@ -28,10 +28,15 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         $elem.scroll(function(){
           var scrollTop = $elem.scrollTop()
           var scrollHeight = $elem.prop('scrollHeight') - $elem.height()
+          var scrollLeft = $elem.scrollLeft()
+          var scrollWidth = $elem.prop('scrollWidth') - $elem.width()
+
           $scope.$apply(function() {
             onScrollHandler($scope, {
               scrollTop: scrollTop,
-              scrollHeight: scrollHeight
+              scrollHeight: scrollHeight,
+              scrollLeft: scrollLeft,
+              scrollWidth: scrollWidth
             })
           })
         });

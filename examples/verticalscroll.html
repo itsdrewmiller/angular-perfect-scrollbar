@@ -8,13 +8,13 @@
         <script src="../bower_components/perfect-scrollbar/min/perfect-scrollbar.with-mousewheel.min.js" ></script>
         <script src="../src/angular-perfect-scrollbar.js" ></script>
         <style>
-        	.scroller {
-        		white-space: pre-line;
+            .scroller {
+                white-space: pre-line;
                 height: 720px;
                 width: 480px;
                 overflow-y: hidden;
                 position: relative;
-        	}
+            }
         </style>
     </head>
     <body ng-app="myApp" ng-controller="ScrollCtrl">
@@ -39,21 +39,17 @@
         </perfect-scrollbar>
         <p>scrollTop:{{scrollTop}}, scrollHeight:{{scrollHeight}}</p>
     <script>
-    	    	var app = angular.module('myApp', ['perfect_scrollbar']);
-
+                var app = angular.module('myApp', ['perfect_scrollbar']);
                 var ScrollCtrl = function($scope) {
                     $scope.someArray = [1, 2, 3];
-
                     $scope.addItem = function() {
                         var arrayLength = $scope.someArray.length;
                         var nextValue = arrayLength > 0 ? $scope.someArray[arrayLength - 1] + 1 : 1;
                         $scope.someArray.push(nextValue);
                     };
-
                     $scope.removeItem = function() {
                         if ($scope.someArray.length) { $scope.someArray.pop(); }
                     }
-
                     $scope.scrollTop = 0
                     $scope.scrollHeight = 0
                     $scope.onScroll = function (scrollTop, scrollHeight) {
@@ -61,7 +57,6 @@
                         $scope.scrollHeight = scrollHeight
                     }
                 };
-
         </script>
     </body>
 </html>
