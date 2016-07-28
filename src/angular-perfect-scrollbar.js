@@ -9,7 +9,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
   return {
     restrict: 'EA',
     transclude: true,
-    template: '<div><div ng-transclude></div></div>',
+    template: '<div></div>',
     replace: true,
     link: function($scope, $elem, $attr) {
       var jqWindow = angular.element($window);
@@ -81,6 +81,13 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         $elem.perfectScrollbar('destroy');
       });
 
-    }
+    },
+    controller: ['$scope', '$element', '$transclude',
+      function ($scope, $element, $transclude) {
+        $transclude($scope, function (transEl) {
+          $element.append(transEl);
+        });
+      }
+    ]
   };
 }]);
