@@ -3,7 +3,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
   var psOptions = [
     'wheelSpeed', 'wheelPropagation', 'minScrollbarLength', 'maxScrollbarLength', 'useBothWheelAxes',
     'useKeyboard', 'suppressScrollX', 'suppressScrollY', 'scrollXMarginOffset',
-    'scrollYMarginOffset', 'includePadding'//, 'onScroll', 'scrollDown'
+    'scrollYMarginOffset', 'includePadding', 'resetPosition'//, 'onScroll', 'scrollDown'
   ];
 
   return {
@@ -11,6 +11,9 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
     transclude: true,
     template: '<div><div ng-transclude></div></div>',
     replace: true,
+    scope: {
+      reset: '&resetPosition'
+    },
     link: function($scope, $elem, $attr) {
       var jqWindow = angular.element($window);
       var options = {};
@@ -81,6 +84,12 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
         $elem.perfectScrollbar('destroy');
       });
 
+      $scope.resetPosition = function(x, y) {
+        $($elem).scrollTop(y || 0);
+        $($elem).scrollLeft(x || 0);
+      }
+
+      $scope.reset({fn: $scope.resetPosition});
     }
   };
 }]);

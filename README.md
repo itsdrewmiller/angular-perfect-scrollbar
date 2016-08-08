@@ -7,6 +7,9 @@ Please email me.  "drew" at the domain "drewmiller.net".
 angular-perfect-scrollbar
 =========================
 
+### Note For This Forked Repo
+This project is a forked repo by [angular-perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar), since author maintain it inactively, we need fix some bugs and add some available features, so publish this repo to bower "angular-live-scrollbar"
+
 This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in angular.
 
 You can just use the file (in the *src* directory) as is - you only need to pay attention to the other stuff for further development.  It is also available on [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
