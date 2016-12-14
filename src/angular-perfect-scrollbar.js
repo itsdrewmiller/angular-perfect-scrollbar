@@ -65,14 +65,14 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar',
       $elem.bind('mouseenter', update('mouseenter'));
 
       // Possible future improvement - check the type here and use the appropriate watch for non-arrays
-      if ($attr.refreshOnChange) {
-        $scope.$watchCollection($attr.refreshOnChange, function() {
+      if ($attr['refreshOnChange']) {
+        $scope.$watchCollection($attr['refreshOnChange'], function() {
           update();
         });
       }
 
       // this is from a pull request - I am not totally sure what the original issue is but seems harmless
-      if ($attr.refreshOnResize) {
+      if ($attr['refreshOnResize']) {
         jqWindow.on('resize', update);
       }
 
