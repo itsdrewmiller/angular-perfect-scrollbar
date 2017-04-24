@@ -12,19 +12,23 @@
             .scroller {
                 white-space: pre-line;
                 height: 720px;
-                width: 480px;
-                overflow-y: hidden;
+                width: 50%;
+                overflow: hidden;
                 position: relative;
+                background: #eee;
+            }
+
+            .scroller>div {
+                padding-right: 15px;
             }
 
         </style>
     </head>
 
     <body ng-app="myApp" ng-controller="ScrollCtrl">
-        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray" on-scroll="onScroll(scrollTop, scrollHeight)">
-            <button ng-click="addItem()">Add</button>
-            <button ng-click="removeItem()">Remove</button>
+        <p><button ng-click="addItem()">Add</button> <button ng-click="removeItem()">Remove</button></p>
 
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray" on-scroll="onScroll(scrollTop, scrollHeight)">
             <div ng-repeat="times in someArray">
                 {{times}}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eleifend lectus et nunc congue gravida. Phasellus et iaculis risus, ut scelerisque dolor. Sed diam diam, tempor et feugiat a, pharetra sed nulla. Duis non lacinia odio, vitae
                 ultricies dui. Ut sit amet dui quis lectus cursus laoreet et in magna. Nulla rutrum nisi urna, sit amet faucibus felis placerat ac. Cras commodo aliquam purus, eget gravida magna lacinia non. Sed facilisis, eros iaculis rhoncus adipiscing,
@@ -42,24 +46,29 @@
             </div>
         </perfect-scrollbar>
 
-        <p>scrollTop:{{scrollTop}}, scrollHeight:{{scrollHeight}}</p>
+        <p>scrollTop: {{scrollTop}}<br />scrollHeight: {{scrollHeight}}</p>
 
         <script>
             var app = angular.module('myApp', ['perfect_scrollbar']);
+
             var ScrollCtrl = function($scope) {
                 $scope.someArray = [1, 2, 3];
+
                 $scope.addItem = function() {
                     var arrayLength = $scope.someArray.length;
                     var nextValue = arrayLength > 0 ? $scope.someArray[arrayLength - 1] + 1 : 1;
                     $scope.someArray.push(nextValue);
                 };
+
                 $scope.removeItem = function() {
                     if ($scope.someArray.length) {
                         $scope.someArray.pop();
                     }
                 }
+
                 $scope.scrollTop = 0
                 $scope.scrollHeight = 0
+
                 $scope.onScroll = function(scrollTop, scrollHeight) {
                     $scope.scrollTop = scrollTop
                     $scope.scrollHeight = scrollHeight

@@ -13,21 +13,14 @@
                 white-space: nowrap;
                 height: 200px;
                 width: 100%;
-                overflow-y: hidden;
+                overflow: hidden;
                 position: relative;
             }
 
             .wrapper {
                 display: inline-block;
                 padding-right: 40px;
-            }
-
-            .item {
-                display: block;
-            }
-
-            .button {
-                vertical-align: top;
+                background: #eee;
             }
 
         </style>
@@ -35,33 +28,26 @@
 
     <body ng-app="myApp" ng-controller="ScrollCtrl">
         <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray" on-scroll="onScroll(scrollLeft, scrollWidth)">
-            <button class="button" ng-click="addItem()">Add</button>
-            <button class="button" ng-click="removeItem()">Remove</button>
-
             <div ng-repeat="times in someArray" class="wrapper">
                 {{times}}.
-
-                <span class='item'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
-
-                <span class='item'>Vestibulum eleifend lectus et nunc congue gravida. </span>
-
-                <span class='item'>Phasellus et iaculis risus, ut scelerisque dolor. </span>
-
-                <span class='item'>Sed diam diam, tempor et feugiat a, pharetra sed nulla. </span>
-
-                <span class='item'>Duis non lacinia odio, vitae ultricies dui. </span>
-
-                <span class='item'>Ut sit amet dui quis lectus cursus laoreet et in magna. </span>
-
-                <span class='item'>Nulla rutrum nisi urna, sit amet faucibus felis placerat ac. </span>
-
-                <span class='item'>Cras commodo aliquam purus, eget gravida magna lacinia non. </span>
-
-                <span class='item'>Sed facilisis, eros iaculis rhoncus adipiscing, dolor augue fermentum risus, vel vulputate massa metus ac erat. </span>
+                <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                <div class="item">Vestibulum eleifend lectus et nunc congue gravida.</div>
+                <div class="item">Phasellus et iaculis risus, ut scelerisque dolor.</div>
+                <div class="item">Sed diam diam, tempor et feugiat a, pharetra sed nulla.</div>
+                <div class="item">Duis non lacinia odio, vitae ultricies dui.</div>
+                <div class="item">Ut sit amet dui quis lectus cursus laoreet et in magna.</div>
+                <div class="item">Nulla rutrum nisi urna, sit amet faucibus felis placerat ac.</div>
+                <div class="item">Cras commodo aliquam purus, eget gravida magna lacinia non.</div>
+                <div class="item">Sed facilisis, eros iaculis rhoncus adipiscing, dolor augue fermentum risus, vel vulputate massa metus ac erat.</div>
             </div>
         </perfect-scrollbar>
 
-        <p>scrollLeft:{{scrollLeft}}, scrollWidth:{{scrollWidth}}</p>
+        <p>
+            <button class="button" ng-click="addItem()">Add</button>
+            <button class="button" ng-click="removeItem()">Remove</button>
+        </p>
+
+        <p>scrollLeft: {{scrollLeft}}<br />scrollWidth: {{scrollWidth}}</p>
 
         <script>
             var app = angular.module('myApp', ['perfect_scrollbar']);
