@@ -2,6 +2,7 @@
   "name": "angular-perfect-scrollbar",
   "version": "0.0.8",
   "private": false,
+  "main": "src/angular-perfect-scrollbar.js",
   "scripts": {
     "test": "grunt"
   },
