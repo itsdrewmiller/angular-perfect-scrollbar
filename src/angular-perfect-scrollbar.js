@@ -1,6 +1,6 @@
 /*
  * Angular Perfect scrollbar
- * Version 0.0.7
+ * Version 0.0.8
  * https://github.com/itsdrewmiller/angular-perfect-scrollbar
  */
 
