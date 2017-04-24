@@ -1,5 +1,10 @@
-angular
+/*
+ * Angular Perfect scrollbar
+ * Version 0.0.7
+ * https://github.com/itsdrewmiller/angular-perfect-scrollbar
+ */
 
+angular
   .module('perfect_scrollbar', [])
 
   .directive('perfectScrollbar', ['$parse', '$window', function ($parse, $window) {
@@ -76,7 +81,9 @@ angular
         }
 
         // This is necessary when you don't watch anything with the scrollbar
-        $elem.bind('mouseenter', update('mouseenter'));
+        $elem.on('mouseenter', function () {
+          update('mouseenter');
+        });
 
         // Possible future improvement: check the type here and use the appropriate watch for non-arrays
         if ($attr.refreshOnChange) {
