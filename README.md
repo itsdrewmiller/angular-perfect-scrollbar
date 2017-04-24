@@ -40,7 +40,7 @@ Include some CSS for your scrollable content:
 }
 ```
 
-Inject it as module to your app.js:
+Inject the module into your app or component:
 
 ```js
 ['perfect_scrollbar']
