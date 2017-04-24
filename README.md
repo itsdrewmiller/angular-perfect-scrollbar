@@ -23,9 +23,8 @@ $ bower install angular-perfect-scrollbar --save
 Include the angular-perfect-scrollbar files in your index.html:
 
 ```html
-<link rel="stylesheet" href="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css" />
-<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.js"></script>
-<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.with-mousewheel.min.js"></script>
+<link href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet" />
+<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
 <script src="bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
 ```
 
@@ -50,7 +49,7 @@ Use it wherever you want with the custom directive:
 
 ```html
 <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
-  // your content
+  <!-- Your content here. -->
 </perfect-scrollbar>
 ```
 

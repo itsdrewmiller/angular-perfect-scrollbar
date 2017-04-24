@@ -52,30 +52,31 @@
         <p>scrollLeft: {{scrollLeft}}<br />scrollWidth: {{scrollWidth}}</p>
 
         <script>
-            var app = angular.module('myApp', ['perfect_scrollbar']);
+            angular
+                .module('myApp', ['perfect_scrollbar'])
 
-            var ScrollCtrl = function($scope) {
-                $scope.someArray = [1, 2, 3];
+                .controller('ScrollCtrl', function($scope) {
+                    $scope.someArray = [1, 2, 3];
 
-                $scope.addItem = function() {
-                    var arrayLength = $scope.someArray.length;
-                    var nextValue = arrayLength > 0 ? $scope.someArray[arrayLength - 1] + 1 : 1;
-                    $scope.someArray.push(nextValue);
-                };
+                    $scope.addItem = function() {
+                        var arrayLength = $scope.someArray.length;
+                        var nextValue = arrayLength > 0 ? $scope.someArray[arrayLength - 1] + 1 : 1;
+                        $scope.someArray.push(nextValue);
+                    };
 
-                $scope.removeItem = function() {
-                    if ($scope.someArray.length) {
-                        $scope.someArray.pop();
+                    $scope.removeItem = function() {
+                        if ($scope.someArray.length) {
+                            $scope.someArray.pop();
+                        }
                     }
-                }
 
-                $scope.scrollLeft = 0
-                $scope.scrollWidth = 0
-                $scope.onScroll = function(scrollLeft, scrollWidth) {
-                    $scope.scrollLeft = scrollLeft
-                    $scope.scrollWidth = scrollWidth
-                }
-            };
+                    $scope.scrollLeft = 0
+                    $scope.scrollWidth = 0
+                    $scope.onScroll = function(scrollLeft, scrollWidth) {
+                        $scope.scrollLeft = scrollLeft
+                        $scope.scrollWidth = scrollWidth
+                    }
+                });
 
         </script>
     </body>
