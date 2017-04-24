@@ -7,9 +7,9 @@ Please email me.  "drew" at the domain "drewmiller.net".
 angular-perfect-scrollbar
 =========================
 
-This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in angular.
+This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in AngularJS.
 
-You can just use the file (in the *src* directory) as is - you only need to pay attention to the other stuff for further development.  It is also available on [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
+You can just use the file (in the *src* directory) as is - you only need to pay attention to the other stuff for further development. It is also available from [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
 
 Installation
 =========================
@@ -29,7 +29,7 @@ Include the angular-perfect-scrollbar files in your index.html:
 <script src="bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
 ```
 
-Include some css for your scrollable content:
+Include some CSS for your scrollable content:
 
 ```css
 .scroller {
@@ -40,13 +40,13 @@ Include some css for your scrollable content:
 }
 ```
 
-Add it as module to your app.js:
+Inject it as module to your app.js:
 
 ```js
 ['perfect_scrollbar']
 ```
 
-Use it wherever you want:
+Use it wherever you want with the custom directive:
 
 ```html
 <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
@@ -54,9 +54,7 @@ Use it wherever you want:
 </perfect-scrollbar>
 ```
 
-Further installation and usage hints can be found here:
-
-https://github.com/noraesae/perfect-scrollbar
+Further installation and usage hints can be found here at https://github.com/noraesae/perfect-scrollbar.
 
 You can find an example in the *examples* folder in this repository.  Much respect to [Hyunje Alex Jun](https://github.com/noraesae) for his great scrollbar library.
 

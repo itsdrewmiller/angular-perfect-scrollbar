@@ -1,12 +1,11 @@
 {
   "name": "angular-perfect-scrollbar",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "scripts": {
     "test": "grunt"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.2",
     "grunt-contrib-jshint": "^0.8.0"
