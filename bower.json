@@ -9,8 +9,8 @@
     "scrollbar"
   ],
   "dependencies": {
-    "perfect-scrollbar": "~0.6.16",
-    "angular": "1.6.4"
+    "perfect-scrollbar": "0.6.x",
+    "angular": "*"
   },
   "authors": [
     "Drew Miller",

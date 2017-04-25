@@ -22,6 +22,6 @@
     "commit": "3049129e5dbb403295ce8507a461cdd0f200938c"
   },
   "_source": "https://github.com/noraesae/perfect-scrollbar-bower.git",
-  "_target": "~0.6.16",
+  "_target": "0.6.x",
   "_originalSource": "perfect-scrollbar"
 }
