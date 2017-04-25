@@ -1,6 +1,6 @@
 /*
  * Angular Perfect scrollbar
- * Version 0.0.8
+ * Version 0.0.9
  * https://github.com/itsdrewmiller/angular-perfect-scrollbar
  */
 
@@ -61,7 +61,7 @@ angular
           });
         });
 
-        // automatically update when content height changes
+        // Automatically update when content height changes
         $scope.$watch(function () {
           return $elem.prop('scrollHeight');
         }, function (newValue, oldValue) {
@@ -96,11 +96,17 @@ angular
 
         // Rebuild on window resize
         if ($attr.refreshOnResize) {
-          jqWindow.on('resize', update);
+          jqWindow.on('resize', function () {
+            update();
+          });
         }
 
-        $elem.bind('$destroy', function () {
-          jqWindow.off('resize', update);
+        // Unbind resize event and destroy instance
+        $elem.on('$destroy', function () {
+          jqWindow.off('resize', function () {
+            update();
+          });
+
           $elem.perfectScrollbar('destroy');
         });
       }
