@@ -1,0 +1,7 @@
+{
+  "files": {
+    "excluded": [
+      "**/*.min.js"
+    ]
+  }
+}
