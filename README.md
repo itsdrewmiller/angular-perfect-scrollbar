@@ -1,8 +1,6 @@
 angular-perfect-scrollbar
 =========================
 
-[![Inline docs](http://inch-ci.org/github/itsdrewmiller/angular-perfect-scrollbar.svg?branch=master)](http://inch-ci.org/github/itsdrewmiller/angular-perfect-scrollbar)
-
 This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in AngularJS.
 
 You can just use one of the files (in the *src* directory) as they are - you only need to pay attention to the other stuff for further development. It is also available from [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
