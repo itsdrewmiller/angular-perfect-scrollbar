@@ -49,7 +49,7 @@ Use it wherever you want with the custom directive:
 
 Further installation and usage hints can be found at https://github.com/noraesae/perfect-scrollbar.
 
-You can find simple vertical and horizontal examples in the *examples* folder in this repository.  Much respect to [Hyunje Alex Jun](https://github.com/noraesae) for his great scrollbar library.
+You can find simple vertical and horizontal examples in the *examples* folder in this repository.  Much respect to [Hyunje Jun](https://github.com/noraesae) for his great scrollbar library.
 
 Would you like to be a co-maintainer?
 -------------------------------------
