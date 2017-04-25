@@ -30,7 +30,7 @@
     <body ng-app="myApp" ng-controller="ScrollCtrl">
         <p><button ng-click="addItem()">Add</button> <button ng-click="removeItem()">Remove</button></p>
 
-        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray" on-scroll="onScroll(scrollTop, scrollHeight)">
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" handlers="['some', 'handlers']" theme="'my-theme'" swipe-propagation="true" refresh-on-change="someArray" on-scroll="onScroll(scrollTop, scrollHeight)">
             <div ng-repeat="times in someArray">
                 {{times}}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eleifend lectus et nunc congue gravida. Phasellus et iaculis risus, ut scelerisque dolor. Sed diam diam, tempor et feugiat a, pharetra sed nulla. Duis non lacinia odio, vitae
                 ultricies dui. Ut sit amet dui quis lectus cursus laoreet et in magna. Nulla rutrum nisi urna, sit amet faucibus felis placerat ac. Cras commodo aliquam purus, eget gravida magna lacinia non. Sed facilisis, eros iaculis rhoncus adipiscing,

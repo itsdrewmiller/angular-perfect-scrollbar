@@ -1,6 +1,6 @@
 /*
  * Angular Perfect scrollbar
- * Version 0.0.9
+ * Version 0.1.0
  * https://github.com/itsdrewmiller/angular-perfect-scrollbar
  */
 
@@ -9,8 +9,10 @@ angular
 
   .directive('perfectScrollbar', ['$parse', '$window', function ($parse, $window) {
     var psOptions = [
+        'handlers',
         'wheelSpeed',
         'wheelPropagation',
+        'swipePropagation',
         'minScrollbarLength',
         'maxScrollbarLength',
         'useBothWheelAxes',
@@ -19,7 +21,7 @@ angular
         'suppressScrollY',
         'scrollXMarginOffset',
         'scrollYMarginOffset',
-        'includePadding'
+        'theme'
     ];
 
     return {
