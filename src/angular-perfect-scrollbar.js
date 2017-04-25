@@ -60,6 +60,7 @@ angular
           });
         });
 
+        // automatically update when content height changes
         $scope.$watch(function () {
           return $elem.prop('scrollHeight');
         }, function (newValue, oldValue) {

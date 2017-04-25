@@ -1,9 +1,3 @@
-Would you like to be a co-maintainer?
-=====================================
-
-Please email me.  "drew" at the domain "drewmiller.net".
-
-
 angular-perfect-scrollbar
 =========================
 
@@ -56,6 +50,12 @@ Use it wherever you want with the custom directive:
 Further installation and usage hints can be found here at https://github.com/noraesae/perfect-scrollbar.
 
 You can find an example in the *examples* folder in this repository.  Much respect to [Hyunje Alex Jun](https://github.com/noraesae) for his great scrollbar library.
+
+Would you like to be a co-maintainer?
+=====================================
+
+Please [email me](https://github.com/itsdrewmiller).
+
 
 License
 -------
