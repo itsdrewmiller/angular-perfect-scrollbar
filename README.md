@@ -1,3 +1,5 @@
+[![Inline docs](http://inch-ci.org/github/itsdrewmiller/angular-perfect-scrollbar.svg?branch=master)](http://inch-ci.org/github/itsdrewmiller/angular-perfect-scrollbar)
+
 angular-perfect-scrollbar
 =========================
 
