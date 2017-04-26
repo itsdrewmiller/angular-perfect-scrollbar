@@ -1,58 +1,61 @@
 angular-perfect-scrollbar
 =========================
 
-This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in angular.
+This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in AngularJS.
 
-You can just use the file (in the *src* directory) as is - you only need to pay attention to the other stuff for further development.  It is also available on [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
+You can just use one of the files (in the *src* directory) as they are - you only need to pay attention to the other stuff for further development. It is also available from [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
 
 Installation
-=========================
+------------
 
 Install via Bower:
 
-````
+```shell
 $ bower install angular-perfect-scrollbar --save
 ```
 
 Include the angular-perfect-scrollbar files in your index.html:
 
-````
-<link rel="stylesheet" href="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css" />
-<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.js"></script>
-<script src="bower_components/perfect-scrollbar/min/perfect-scrollbar.with-mousewheel.min.js"></script>
+```html
+<link href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet" />
+<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
 <script src="bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
 ```
 
-Include some css for your scrollable content:
+Include some CSS for your scrollable content:
 
-````
+```css
 .scroller {
     white-space: pre-line;
     height: 500px;
     overflow-y: hidden;
     position: relative;
 }
-````
+```
 
-Add it as module to your app.js:
+Inject the module into your app or component:
 
-````
+```js
 ['perfect_scrollbar']
-````
+```
 
-Use it wherever you want:
+Use it wherever you want with the custom directive:
 
-````
+```html
 <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
-  // your content
+  <!-- Your content here. -->
 </perfect-scrollbar>
-````
+```
 
-Further installation and usage hints can be found here:
+Further installation and usage hints can be found at https://github.com/noraesae/perfect-scrollbar.
 
-https://github.com/noraesae/perfect-scrollbar
+You can find simple vertical and horizontal examples in the *examples* folder in this repository.  Much respect to [Hyunje Jun](https://github.com/noraesae) for his great scrollbar library.
 
-You can find an example in the *examples* folder in this repository.  Much respect to [Hyunje Alex Jun](https://github.com/noraesae) for his great scrollbar library.
+Would you like to be a co-maintainer?
+-------------------------------------
+
+Please [email me](https://github.com/itsdrewmiller).
+
 
 License
 -------

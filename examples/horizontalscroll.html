@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <link href="../bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
+
+        <!-- jQuery should be provided by perfect-scrollbar's Bower dependencies -->
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../src/angular-perfect-scrollbar.js"></script>
+
+        <style>
+            .scroller {
+                white-space: nowrap;
+                height: 200px;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .wrapper {
+                display: inline-block;
+                padding-right: 40px;
+                background: #eee;
+            }
+
+        </style>
+    </head>
+
+    <body ng-app="myApp" ng-controller="ScrollCtrl">
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray" on-scroll="onScroll(scrollLeft, scrollWidth)">
+            <div ng-repeat="times in someArray" class="wrapper">
+                {{times}}.
+                <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                <div class="item">Vestibulum eleifend lectus et nunc congue gravida.</div>
+                <div class="item">Phasellus et iaculis risus, ut scelerisque dolor.</div>
+                <div class="item">Sed diam diam, tempor et feugiat a, pharetra sed nulla.</div>
+                <div class="item">Duis non lacinia odio, vitae ultricies dui.</div>
+                <div class="item">Ut sit amet dui quis lectus cursus laoreet et in magna.</div>
+                <div class="item">Nulla rutrum nisi urna, sit amet faucibus felis placerat ac.</div>
+                <div class="item">Cras commodo aliquam purus, eget gravida magna lacinia non.</div>
+                <div class="item">Sed facilisis, eros iaculis rhoncus adipiscing, dolor augue fermentum risus, vel vulputate massa metus ac erat.</div>
+            </div>
+        </perfect-scrollbar>
+
+        <p>
+            <button class="button" ng-click="addItem()">Add</button>
+            <button class="button" ng-click="removeItem()">Remove</button>
+        </p>
+
+        <p>scrollLeft: {{scrollLeft}}<br />scrollWidth: {{scrollWidth}}</p>
+
+        <script>
+            angular
+                .module('myApp', ['perfect_scrollbar'])
+
+                .controller('ScrollCtrl', function($scope) {
+                    $scope.someArray = [1, 2, 3];
+
+                    $scope.addItem = function() {
+                        var arrayLength = $scope.someArray.length;
+                        var nextValue = arrayLength > 0 ? $scope.someArray[arrayLength - 1] + 1 : 1;
+                        $scope.someArray.push(nextValue);
+                    };
+
+                    $scope.removeItem = function() {
+                        if ($scope.someArray.length) {
+                            $scope.someArray.pop();
+                        }
+                    }
+
+                    $scope.scrollLeft = 0
+                    $scope.scrollWidth = 0
+                    $scope.onScroll = function(scrollLeft, scrollWidth) {
+                        $scope.scrollLeft = scrollLeft
+                        $scope.scrollWidth = scrollWidth
+                    }
+                });
+
+        </script>
+    </body>
+
+</html>
