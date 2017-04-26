@@ -22,16 +22,8 @@ Include the angular-perfect-scrollbar files in your index.html:
 <script src="bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
 ```
 
-Include some CSS for your scrollable content:
-
-```css
-.scroller {
-    white-space: pre-line;
-    height: 500px;
-    overflow-y: hidden;
-    position: relative;
-}
-```
+Usage
+-----
 
 Inject the module into your app or component:
 
@@ -39,7 +31,16 @@ Inject the module into your app or component:
 ['perfect_scrollbar']
 ```
 
-Use it wherever you want with the custom directive:
+Add some basic CSS for your scrollable content to your stylesheet:
+
+```css
+.scroller {
+    position: relative; /* relative or absolute positioning required by Perfect Scrollbar */
+    max-height: 500px;  /* height must be limited to induce scrolling behavior */
+}
+```
+
+Include the directive in your markup:
 
 ```html
 <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
