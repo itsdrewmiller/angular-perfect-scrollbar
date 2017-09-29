@@ -49,9 +49,15 @@
 
         <script>
             angular
-                .module('myApp', ['perfect_scrollbar'])
+                .module(
+                    'myApp', 
+                    ['perfect_scrollbar']
+                ).controller(
+                    'ScrollCtrl', 
+                    ScrollCtrl
+                );
 
-                .controller('ScrollCtrl', function($scope) {
+                function ScrollCtrl($scope) {
                     $scope.someArray = [1, 2, 3];
 
                     $scope.addItem = function() {
@@ -73,9 +79,7 @@
                         $scope.scrollTop = scrollTop
                         $scope.scrollHeight = scrollHeight
                     }
-                });
-
+                };
         </script>
     </body>
-
 </html>

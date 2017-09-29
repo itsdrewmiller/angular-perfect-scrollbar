@@ -52,9 +52,14 @@
 
         <script>
             angular
-                .module('myApp', ['perfect_scrollbar'])
+                .module(
+                    'myApp', 
+                    ['perfect_scrollbar']
+                )
 
-                .controller('ScrollCtrl', function($scope) {
+                .controller('ScrollCtrl', ScrollCtrl);
+
+                function ScrollCtrl($scope) {
                     $scope.someArray = [1, 2, 3];
 
                     $scope.addItem = function() {
@@ -75,8 +80,7 @@
                         $scope.scrollLeft = scrollLeft
                         $scope.scrollWidth = scrollWidth
                     }
-                });
-
+                };
         </script>
     </body>
 
