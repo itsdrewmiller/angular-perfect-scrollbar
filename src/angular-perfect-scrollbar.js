@@ -103,6 +103,12 @@ angular
           });
         }
 
+        if($attr.updateOn) {
+            $attr.updateOn.split(' ').forEach(function (eventName) {
+                $scope.$on(eventName, update);
+            });
+        }
+
         // Unbind resize event and destroy instance
         $elem.on('$destroy', function () {
           jqWindow.off('resize', function () {

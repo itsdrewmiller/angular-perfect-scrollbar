@@ -5,6 +5,7 @@ This is a small directive to allow the use of [perfect-scrollbar](https://github
 
 You can just use one of the files (in the *src* directory) as they are - you only need to pay attention to the other stuff for further development. It is also available from [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
 
+
 Installation
 ------------
 
@@ -57,6 +58,22 @@ Would you like to be a co-maintainer?
 
 Please [email me](https://github.com/itsdrewmiller).
 
+
+Just for Angular
+=========================
+Rebuild the scrollbar on $broadcast events:
+
+```html
+<perfect-scrollbar class="scroller" update-on="rebuild:scrollbar" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20">
+  // your content
+</perfect-scrollbar>
+```
+
+In your controller:
+
+````
+$scope.$broadcast("rebuild:scrollbar");
+````
 
 License
 -------
