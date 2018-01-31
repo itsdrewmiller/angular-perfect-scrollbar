@@ -9,8 +9,8 @@
     "scrollbar"
   ],
   "dependencies": {
-    "perfect-scrollbar": "0.6.x",
-    "angular": "*"
+    "angular": "*",
+    "utatti-perfect-scrollbar": "1.3.x"
   },
   "authors": [
     "Drew Miller",

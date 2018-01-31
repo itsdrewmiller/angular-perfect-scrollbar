@@ -12,16 +12,15 @@ angular
         'handlers',
         'wheelSpeed',
         'wheelPropagation',
-        'swipePropagation',
+        'swipeEasing',
         'minScrollbarLength',
         'maxScrollbarLength',
+        'scrollingThreshold',
         'useBothWheelAxes',
-        'useKeyboard',
         'suppressScrollX',
         'suppressScrollY',
         'scrollXMarginOffset',
         'scrollYMarginOffset',
-        'theme'
     ];
 
     return {
@@ -33,6 +32,7 @@ angular
       link: function ($scope, $elem, $attr) {
         var jqWindow = angular.element($window);
         var options = {};
+        var perfect;
 
         for (var i = 0, l = psOptions.length; i < l; i++) {
           var opt = psOptions[i];
@@ -43,14 +43,14 @@ angular
         }
 
         $scope.$evalAsync(function () {
-          $elem.perfectScrollbar(options);
+          perfect = new PerfectScrollbar($elem[0], options);
           var onScrollHandler = $parse($attr.onScroll);
 
-          $elem.scroll(function () {
-            var scrollTop = $elem.scrollTop();
-            var scrollHeight = $elem.prop('scrollHeight') - $elem.height();
-            var scrollLeft = $elem.scrollLeft();
-            var scrollWidth = $elem.prop('scrollWidth') - $elem.width();
+          $elem.on('scroll', function () {
+            var scrollTop = $elem.prop('scrollTop');
+            var scrollHeight = $elem.prop('scrollHeight') - $elem[0].clientHeight;
+            var scrollLeft = $elem.prop('scrollLeft');
+            var scrollWidth = $elem.prop('scrollWidth') - $elem[0].clientWidth;
 
             $scope.$apply(function () {
               onScrollHandler($scope, {
@@ -76,11 +76,11 @@ angular
           $scope.$evalAsync(function () {
             if ($attr.scrollDown == 'true' && event != 'mouseenter') {
               setTimeout(function () {
-                $($elem).scrollTop($($elem).prop("scrollHeight"));
+                $elem[0].scrollTop = $elem.prop("scrollHeight");
               }, 100);
             }
 
-            $elem.perfectScrollbar('update');
+            perfect.update();
           });
         }
 
@@ -115,7 +115,8 @@ angular
             update();
           });
 
-          $elem.perfectScrollbar('destroy');
+          perfect.destroy();
+          perfect = null;
         });
       }
     };
