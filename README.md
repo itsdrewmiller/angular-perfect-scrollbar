@@ -1,7 +1,7 @@
 angular-perfect-scrollbar
 =========================
 
-This is a small directive to allow the use of [perfect-scrollbar](https://github.com/noraesae/perfect-scrollbar) in AngularJS.
+This is a small directive to allow the use of [perfect-scrollbar](https://github.com/utatti/perfect-scrollbar) in AngularJS.
 
 You can just use one of the files (in the *src* directory) as they are - you only need to pay attention to the other stuff for further development. It is also available from [Bower](http://bower.io) as 'angular-perfect-scrollbar'.
 
@@ -18,8 +18,8 @@ $ bower install angular-perfect-scrollbar --save
 Include the angular-perfect-scrollbar files in your index.html:
 
 ```html
-<link href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet" />
-<script src="bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<link href="bower_components/utatti-perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+<script src="bower_components/utatti-perfect-scrollbar/dist/perfect-scrollbar.js"></script>
 <script src="bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
 ```
 
@@ -49,9 +49,9 @@ Include the directive in your markup:
 </perfect-scrollbar>
 ```
 
-Further installation and usage hints can be found at https://github.com/noraesae/perfect-scrollbar.
+Further installation and usage hints can be found at https://github.com/utatti/perfect-scrollbar.
 
-You can find simple vertical and horizontal examples in the *examples* folder in this repository.  Much respect to [Hyunje Jun](https://github.com/noraesae) for his great scrollbar library.
+You can find simple vertical and horizontal examples in the *examples* folder in this repository.  Much respect to [Hyunje Jun](https://github.com/utatti) for his great scrollbar library.
 
 Would you like to be a co-maintainer?
 -------------------------------------
