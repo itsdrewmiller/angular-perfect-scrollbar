@@ -89,6 +89,26 @@ angular
           update('mouseenter');
         });
 
+
+        if($attr.alwaysVisible == 'true'){
+          $scope.$evalAsync(function() {
+            setTimeout(function () {
+              $elem.perfectScrollbar('update');
+              $elem.find('.ps-scrollbar-x-rail').first().css('opacity', 0.6);
+              $elem.find('.ps-scrollbar-y-rail').first().css('opacity', 0.6);
+            }, 100);
+          });
+        }
+
+        if($attr.unbindWheel == 'true'){
+          $scope.$evalAsync(function() {
+            setTimeout(function () {
+              $elem.unbind('mousewheel');
+              $elem.unbind('wheel');
+            }, 100);
+          });
+        }
+
         // Possible future improvement: check the type here and use the appropriate watch for non-arrays
         if ($attr.refreshOnChange) {
           $scope.$watchCollection($attr.refreshOnChange, function () {
