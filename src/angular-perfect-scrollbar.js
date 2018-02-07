@@ -24,7 +24,7 @@ angular
     ];
 
     return {
-      restrict: 'EA',
+      restrict: 'E',
       transclude: true,
       template: '<div><div ng-transclude></div></div>',
       replace: true,
