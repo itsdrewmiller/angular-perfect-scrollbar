@@ -31,13 +31,19 @@ Install via NPM:
 $ npm install angular-perfect-scrollbar perfect-scrollbar --save
 ```
 
-Import angular-perfect-scrollbar files in your JavaScript:
+Import angular-perfect-scrollbar in your JavaScript:
 
 ```js
 import 'angular-perfect-scrollbar';
 ```
 
-Webpack configuration:
+Include perfect-scrollbar CSS, for instance with Webpack import it from within a JS or SCSS file:
+
+```js
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
+```
+
+When using Webpack, the `angular` and `PerfectScrollbar` globals must be provided with the ProvidePlugin:
 
 ```js
 plugins: [
