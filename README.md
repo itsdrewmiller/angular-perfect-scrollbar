@@ -23,6 +23,31 @@ Include the angular-perfect-scrollbar files in your index.html:
 <script src="bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js"></script>
 ```
 
+---
+
+Install via NPM:
+
+```shell
+$ npm install angular-perfect-scrollbar perfect-scrollbar --save
+```
+
+Import angular-perfect-scrollbar files in your JavaScript:
+
+```js
+import 'angular-perfect-scrollbar';
+```
+
+Webpack configuration:
+
+```js
+plugins: [
+    new webpack.ProvidePlugin({
+        'angular': 'angular',
+        'PerfectScrollbar': ['perfect-scrollbar', 'default']
+    })
+]
+```
+
 Usage
 -----
 
