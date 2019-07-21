@@ -71,6 +71,14 @@ angular
             update('contentSizeChange');
           }
         });
+        
+        $scope.$watch(function () {
+          return $elem.prop('offsetHeight')
+        }, function (newValue, oldValue) {
+          if (newValue) {
+            update('contentSizeChange')
+          }
+        })
 
         function update(event) {
           $scope.$evalAsync(function () {
