@@ -28,6 +28,9 @@ angular
       transclude: true,
       template: '<div><div ng-transclude></div></div>',
       replace: true,
+      scope: {
+        scrollTo: '=?'
+      },
       //
       link: function ($scope, $elem, $attr) {
         var jqWindow = angular.element($window);
@@ -71,7 +74,7 @@ angular
             update('contentSizeChange');
           }
         });
-        
+
         $scope.$watch(function () {
           return $elem.prop('offsetHeight')
         }, function (newValue, oldValue) {
@@ -115,6 +118,25 @@ angular
             $attr.updateOn.split(' ').forEach(function (eventName) {
                 $scope.$on(eventName, update);
             });
+        }
+
+        $scope.scrollTo = function (position) {
+          if (position === 'bottom') {
+            $scope.$evalAsync(function () {
+              const paddingTop = window.getComputedStyle($elem[0]).paddingTop
+              setTimeout(function () {
+                $elem[0].scrollTop = $elem.prop("scrollHeight") + parseInt(paddingTop);
+              }, 100);
+              perfect.update();
+            })
+          } else if (position === 'top') {
+            $scope.$evalAsync(function () {
+              setTimeout(() => {
+                $elem[0].scrollTop = 0
+              }, 100);
+              perfect.update();
+            })
+          }
         }
 
         // Unbind resize event and destroy instance
