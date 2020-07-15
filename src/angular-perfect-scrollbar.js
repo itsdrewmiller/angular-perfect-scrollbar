@@ -121,22 +121,19 @@ angular
         }
 
         $scope.scrollTo = function (position) {
-          if (position === 'bottom') {
-            $scope.$evalAsync(function () {
+          $scope.$evalAsync(function () {
+            var scrollTop = position
+            if (position === 'bottom') {
               const paddingTop = window.getComputedStyle($elem[0]).paddingTop
-              setTimeout(function () {
-                $elem[0].scrollTop = $elem.prop("scrollHeight") + parseInt(paddingTop);
-              }, 100);
-              perfect.update();
-            })
-          } else if (position === 'top') {
-            $scope.$evalAsync(function () {
-              setTimeout(() => {
-                $elem[0].scrollTop = 0
-              }, 100);
-              perfect.update();
-            })
-          }
+              scrollTop = $elem.prop("scrollHeight") + parseInt(paddingTop);
+            } else if (position === 'top') {
+              scrollTop = 0
+            }
+            setTimeout(() => {
+              $elem[0].scrollTop = scrollTop
+            }, 100);
+            perfect.update();
+          })
         }
 
         // Unbind resize event and destroy instance
