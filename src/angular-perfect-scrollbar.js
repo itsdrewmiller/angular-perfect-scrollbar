@@ -29,6 +29,7 @@ angular
       template: '<div><div ng-transclude></div></div>',
       replace: true,
       scope: {
+        onScroll: '&onScroll',
         scrollTo: '=?'
       },
       //
@@ -47,7 +48,6 @@ angular
 
         $scope.$evalAsync(function () {
           perfect = new PerfectScrollbar($elem[0], options);
-          var onScrollHandler = $parse($attr.onScroll);
 
           $elem.on('scroll', function () {
             var scrollTop = $elem.prop('scrollTop');
@@ -56,12 +56,12 @@ angular
             var scrollWidth = $elem.prop('scrollWidth') - $elem[0].clientWidth;
 
             $scope.$apply(function () {
-              onScrollHandler($scope, {
+              $scope.onScroll({position: {
                 scrollTop: scrollTop,
                 scrollHeight: scrollHeight,
                 scrollLeft: scrollLeft,
                 scrollWidth: scrollWidth
-              });
+              }});
             });
           });
         });
