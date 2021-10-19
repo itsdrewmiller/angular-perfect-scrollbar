@@ -3,6 +3,10 @@
   "version": "0.2.0",
   "private": false,
   "main": "src/angular-perfect-scrollbar.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsdrewmiller/angular-perfect-scrollbar.git"
+  },
   "scripts": {
     "test": "grunt"
   },
